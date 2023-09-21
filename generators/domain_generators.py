@@ -203,8 +203,9 @@ where (x0, y0) is the initial square robot's left-lower corner coordinate and (x
             case "pddl":
                 return f"""Below is the problem.pddl file in text: \n {self.generate_problem_pddl(grid_size, initial_pos, goal_pos, obstacles)} \n Your optimal plan should containing a sequence of actions of move-x and move-y that lead the robot to the goal. 
 Meanwhile there will be a sequence of change in "robot-x xi" and "robot-y yj" as the effect of each move on robot's position, every position can be transformed into a coordinate (i, j) where both i and j are integer value. So the final path can be transformed into a sequence of coordinates. 
-Please solve the problem and output using the following format with no other explanation: 
-""(i_0,j_0)->(i_1,j_1)...->(i_n,j_n)"" 
+Please solve the problem and output the optimal path.
+Your output format should contain only text below in %%, with no other explanation text: 
+%(i_0,j_0)->(i_1,j_1)...->(i_n,j_n)% 
 where each (i_a, j_a) correpond to the coordinate of robots after ath movement of the optimal path, i_a,j_a should both be integer value dervied from robot-x xi_a and robot-y yj_a"""
         return ""
 
